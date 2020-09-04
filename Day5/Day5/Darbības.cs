@@ -8,27 +8,23 @@ namespace Day5
     {
         public static double saskaitīšana(double number1, double number2)
         {
-            double result = 0;
-            result = number1 + number2;
-            return result;
+            
+            return number1+number2;
         }
         public static double atņemšana(double number1, double number2)
         {
-            double result = 0;
-            result = number1 - number2;
-            return result;
+            
+            return number1 - number2;
         }
        public static double reizināšana(double number1, double number2)
         {
-            double result = 0;
-            result = number1 * number2;
-            return result;
+            
+            return number1 * number2;
         }
        public static double dalīšana(double number1, double number2)
         {
-            double result = 0;
-            result = number1 / number2;
-            return result;
+            
+            return number1 / number2;
         }
 
     }
