@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace Day5
 {
@@ -38,14 +36,15 @@ namespace Day5
                }*/
 
             // task 2 starts here
-            List <String> lst = new List<String>();
+            List<String> lst = new List<String>();
             string choice = "";
-            while (choice !="exit")
+            while (choice != "exit")
             {
                 Console.WriteLine("Izvēlies darbību : add, print vai exit");
-                 choice = Console.ReadLine();
+                choice = Console.ReadLine();
                 if (choice == "add")
-                { Console.WriteLine("Pievieno stringu :");
+                {
+                    Console.WriteLine("Pievieno stringu :");
                     lst.Add(Console.ReadLine());
                 }
                 else if (choice == "print")
@@ -58,31 +57,32 @@ namespace Day5
                     {
                         for (int i = 0; i < lst.Count; i++)
                         {
-                            Console.WriteLine(lst[i]);
+                            Console.Write("["+lst[i]+"]");
                         }
+                        Console.WriteLine();
                     }
                 }
                 else if (choice == "exit") { break; }
                 else { Console.WriteLine("nepareiza ievade"); }
-                    
-                }
-            
+
+            }
+
 
 
         }
- /*       static double  getDouble(int number)
-        {
-            double result = 0;
-            try
-            {
-                Console.WriteLine("Ievadi skaitli Nr"+number+":");
-              result=  Convert.ToDouble(Console.ReadLine());
-                
-            }
-            catch
-            { getDouble(number); }
-            return result;
-        }*/
-       
+        /*       static double  getDouble(int number)
+               {
+                   double result = 0;
+                   try
+                   {
+                       Console.WriteLine("Ievadi skaitli Nr"+number+":");
+                     result=  Convert.ToDouble(Console.ReadLine());
+
+                   }
+                   catch
+                   { getDouble(number); }
+                   return result;
+               }*/
+
     }
 }
