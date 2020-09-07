@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace Day6_Objects
 {
@@ -7,7 +8,33 @@ namespace Day6_Objects
     {
         static void Main(string[] args)
         {
-            Task2();
+            //Task2();
+
+            Students student1 = new Students();
+            Console.WriteLine("Enter student name");
+            student1.name = Console.ReadLine();
+            Console.WriteLine("Enter student surname");
+            student1.surname = Console.ReadLine();
+            Console.WriteLine("Enter student year");
+            try
+            {
+                student1.year = Convert.ToInt32(Console.ReadLine());
+                if (student1.year>3)
+                { student1.year = 3; }
+                else if (student1.year<1)
+                { student1.year = 1; }
+
+            }
+            catch
+            {
+                Console.WriteLine("Nepareiza ievade!");
+                
+            }
+            student1.printInfo();
+
+
+
+
         }
         static void Task2()
         {
