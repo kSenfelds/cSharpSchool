@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace Day6_Objects
 {
@@ -19,9 +18,9 @@ namespace Day6_Objects
             try
             {
                 student1.year = Convert.ToInt32(Console.ReadLine());
-                if (student1.year>3)
+                if (student1.year > 3)
                 { student1.year = 3; }
-                else if (student1.year<1)
+                else if (student1.year < 1)
                 { student1.year = 1; }
 
             }
@@ -31,45 +30,10 @@ namespace Day6_Objects
                 
             }
             student1.printInfo();
+            
 
 
 
-
-        }
-        static void Task2()
-        {
-            List<String> lst = new List<String>();
-
-            String choice = " ";
-
-            while (choice != "0")
-            {
-                Console.WriteLine("1- Izvadit");
-                Console.WriteLine("2- Pievienot");
-                Console.WriteLine("0- Iziet");
-                Console.WriteLine("3- izdzēst elementu");
-
-                choice = Console.ReadLine();
-
-                switch (choice)
-                {
-                    case "1":
-                        PrintLst(lst);
-                        break;
-                    case "2":
-                        AddElement(lst);
-                        break;
-                    case "0":
-                        break;
-                    case "3":
-                        DeleteElement(lst);
-                        break;
-
-                    default:
-                        Console.WriteLine("Nepareiza ievade");
-                        break;
-                }
-            }
         }
 
 
