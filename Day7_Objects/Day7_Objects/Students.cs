@@ -6,24 +6,48 @@ namespace Day7_Objects
 {
     class Students
     {
-        public String name {get; set;}
-        public String surname { get; set; }
-        private int _year;
-        public int year { get; set; }
-       
+        public String Name {get; set;}
+        public String Surname { get; set; }
+        
+        private int _course;
 
-
-
-        public void printInfo()
+        public int Course
         {
-            Console.WriteLine(name + " " + surname + " " + year);
-        }
-        public Students(String name, String surname, int year)
-        {
-            this.name = name;
-            this.surname = surname;
-            this.year = year;
+            get
+            {
+                return _course;
+            }
+            set
+            {
+                if (value >= 1 && value <= 3)
+                {
+                    _course = value;
+                }
+                else if (value > 3)
+                {
+                    _course = 3;
+                }
+                else
+                {
+                    _course = 1;
+                }
+            }
         }
 
+
+
+                public void printInfo()
+                {
+                    Console.WriteLine(Name + " " + Surname + " " + Course);
+                }
+                public Students(String name, String surname, int course)
+                {
+                    Name = name;
+                    Surname = surname;
+                    Course = course;
+                    
+                }
+            
+        
     }
 }

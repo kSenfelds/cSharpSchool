@@ -13,6 +13,7 @@ namespace Day7_Objects
             {
                 Console.WriteLine("1- Add student");
                 Console.WriteLine("2- Print list of students");
+                Console.WriteLine("3- Delete student from list!");
                 Console.WriteLine("0- Exit");
                 Console.WriteLine();
                 choice = Console.ReadLine();
@@ -25,8 +26,18 @@ namespace Day7_Objects
                         Console.WriteLine("Enter lastname");
                         string lastname = Console.ReadLine();
                         Console.WriteLine("Enter course");
-                        int year = Convert.ToInt32(Console.ReadLine());
-                        lstOfStudents.Add(new Students(name, lastname, year));
+                        try
+                        {
+                            int year = Convert.ToInt32(Console.ReadLine());
+                            lstOfStudents.Add(new Students(name, lastname, year));
+                            Console.WriteLine();
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Nepareiza ievade");
+
+                        }
+                        
                         break;
                     case "2":
                         if (lstOfStudents.Count == 0) 
@@ -41,6 +52,25 @@ namespace Day7_Objects
                                 lstOfStudents[i].printInfo();
                                 Console.WriteLine();
                             }
+                        }
+                        break;
+                    case "3":
+                        if (lstOfStudents.Count==0)
+                        {
+
+                            Console.WriteLine("List is empty, nothing to delete");
+                        }
+                        else
+                        {
+                            Console.WriteLine();
+                            for (int i =0;i<lstOfStudents.Count; i++)
+                            {
+                                Console.Write("Nr."+i);
+                                lstOfStudents[i].printInfo();
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine("Whitch student to delete?");
+                            lstOfStudents.RemoveAt(Convert.ToInt32(Console.ReadLine()));
                         }
                         break;
                 }
