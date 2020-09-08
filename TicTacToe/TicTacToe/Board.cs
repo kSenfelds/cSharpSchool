@@ -7,13 +7,13 @@ namespace TicTacToe
 {
     class Board
     {
-        public static char[,] board = 
+        private static string[,] board = 
         {
-            {' ','|', ' ', '|', ' ' },
-            {'-','+', '-', '+', '-' },
-            {' ','|', ' ', '|', ' ' },
-            {'-','+', '-', '+', '-' },
-            {' ','|', ' ', '|', ' ' },
+            {" ","|", " ", "|"," " },
+            {"-","+","-", "+","-" },
+            {" ","|", " ", "|"," " },
+            {"-","+","-", "+","-" },
+           {" ","|", " ", "|"," " },
 
         };
         public static void printBoard()
@@ -23,12 +23,12 @@ namespace TicTacToe
                {
                    for (int j =0; j<board.GetLength(1);i++)
                    {
-                     Console.Write(board[i, j]); // Index out of bounds
-                 }
+                    Console.Write(board[i, j]); // Index out of bounds
+                   }
                  Console.WriteLine();
                }
-            
-           
+
+
         }
 
     }
