@@ -70,7 +70,7 @@ namespace Day8
                     platums = temp;
 
                 }
-                if (garums == -1 || platums == -1)
+                if ( garums<0 || platums<0)
                 { Console.WriteLine("figūra Nr." + i + "netika pievienota!"); }
                 else { lst.Add(new Taisnstūris(garums, platums)); }
 
