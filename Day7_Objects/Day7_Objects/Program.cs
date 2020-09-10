@@ -15,8 +15,9 @@ namespace Day7_Objects
                 Console.WriteLine("2- Print list of students");
                 Console.WriteLine("3- Delete student from list!");
                 Console.WriteLine("0- Exit");
-                Console.WriteLine();
                 choice = Console.ReadLine();
+                Console.WriteLine();
+               
 
                 switch (choice)
                 {
@@ -34,7 +35,7 @@ namespace Day7_Objects
                         }
                         catch
                         {
-                            Console.WriteLine("Nepareiza ievade");
+                            Console.WriteLine("Incorrect input!");
 
                         }
                         
@@ -65,13 +66,17 @@ namespace Day7_Objects
                             Console.WriteLine();
                             for (int i =0;i<lstOfStudents.Count; i++)
                             {
-                                Console.Write("Nr."+i);
+                                Console.Write("Nr."+i + " => ");
                                 lstOfStudents[i].printInfo();
                             }
                             Console.WriteLine();
                             Console.WriteLine("Whitch student to delete?");
                             lstOfStudents.RemoveAt(Convert.ToInt32(Console.ReadLine()));
                         }
+                        break;
+                    case "0":
+                        break;
+                    default: Console.WriteLine("Incorrect input!");
                         break;
                 }
 
