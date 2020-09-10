@@ -20,5 +20,6 @@ namespace Day8
         {
             Console.WriteLine(" "+Laukums);
         }
+        
     }
 }
