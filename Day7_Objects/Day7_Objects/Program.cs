@@ -71,7 +71,15 @@ namespace Day7_Objects
                             }
                             Console.WriteLine();
                             Console.WriteLine("Whitch student to delete?");
-                            lstOfStudents.RemoveAt(Convert.ToInt32(Console.ReadLine()));
+                            try
+                            {
+                                lstOfStudents.RemoveAt(Convert.ToInt32(Console.ReadLine()));
+                            }
+                            catch 
+                            { 
+                                Console.WriteLine("Incorrect input!");
+                                break;
+                            }
                         }
                         break;
                     case "0":
