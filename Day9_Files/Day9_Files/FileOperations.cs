@@ -31,7 +31,7 @@ namespace Day9_Files
             try
             {
                
-                StreamReader sr = new StreamReader(filename+".txt");
+                StreamReader sr = new StreamReader(location+".txt");
                 
                 string line =sr.ReadLine();
                 while (line != null)
