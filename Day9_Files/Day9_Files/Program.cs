@@ -7,9 +7,9 @@ namespace Day9_Files
     {
         static void Main(string[] args)
         {
-            List<string> lst = new List<string>() { "S", "T", "R", "I", "N", "G" };
-            FileOperations.Write(lst);
-            FileOperations.Read(FileOperations.filename);
+            List<String> lst = FileOperations.Read2("Test.txt");
+            FileOperations.Write2("Test.txt", lst);
+            FileOperations.Read("newTest.txt");
         }
     }
 }

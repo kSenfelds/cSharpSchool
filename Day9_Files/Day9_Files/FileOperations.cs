@@ -18,8 +18,14 @@ namespace Day9_Files
                 StreamWriter sw = new StreamWriter(filename + ".txt",true);
                 for (int i=0; i<lst.Count; i++)
                 {
-                    sw.WriteLine(lst[i]);
+                    sw.Write("["+lst[i]+"]");
+                   
                     
+                }
+                sw.WriteLine();
+                for (int j = 0; j<lst.Count;j++)
+                {
+                    sw.WriteLine(lst[j]);
                 }
                
 
@@ -35,7 +41,7 @@ namespace Day9_Files
             try
             {
                
-                StreamReader sr = new StreamReader(location+".txt");
+                StreamReader sr = new StreamReader(location);
                 
                 string line =sr.ReadLine();
                 while (line != null)
@@ -48,6 +54,45 @@ namespace Day9_Files
             catch
             {
                 Console.WriteLine("Neizdevas nolasīt failu!");
+            }
+        }
+        public static List<String> Read2(string location)
+        {
+            List<String> lst = new List<String>();
+            try
+            {   
+                StreamReader sr = new StreamReader(location );
+                
+                String line = sr.ReadLine();
+                while (line!=null)
+                {
+                    lst.Add(line);
+                    line = sr.ReadLine();
+                }
+                sr.Close();
+                
+            }
+            catch
+            {
+                Console.WriteLine("Error file not found!");
+            }
+            return lst;
+        }
+        public static void Write2 (string location, List<String> lst)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter("new" + location , true);
+                for (int i = lst.Count-1; i >-1; i--)
+                {
+                    sw.WriteLine(lst[i]);
+                }
+                sw.Close();
+            }
+
+            catch
+            {
+                Console.WriteLine("Error can't create file");
             }
         }
     }
