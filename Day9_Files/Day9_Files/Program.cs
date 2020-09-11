@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Day9_Files
 {
@@ -6,7 +7,8 @@ namespace Day9_Files
     {
         static void Main(string[] args)
         {
-            FileOperations.Write();
+            List<string> lst = new List<string>() { "S", "T", "R", "I", "N", "G" };
+            FileOperations.Write(lst);
             FileOperations.Read(FileOperations.filename);
         }
     }

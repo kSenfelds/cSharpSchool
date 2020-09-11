@@ -8,16 +8,20 @@ namespace Day9_Files
     class FileOperations
     {
         public static String filename;
-        public static void Write()
+        public static void Write(List<string> lst)
         {
             
             try
             {
                 Console.WriteLine("Ievadiet faila nosaukumu :");
                 filename = Console.ReadLine().Trim();
-                StreamWriter sw = new StreamWriter(filename + ".txt");
-                sw.WriteLine("Hello");
-                sw.WriteLine("World!");
+                StreamWriter sw = new StreamWriter(filename + ".txt",true);
+                for (int i=0; i<lst.Count; i++)
+                {
+                    sw.WriteLine(lst[i]);
+                    
+                }
+               
 
                 sw.Close();
             }
