@@ -12,7 +12,7 @@ namespace Day5_Objects
        
         static void Task2()
         {
-            List < String > lst = new List<String>();
+            List<String> lst = FileOperations.Read2();
 
             String choice = " ";
 
@@ -55,6 +55,7 @@ namespace Day5_Objects
             {
                 int pos = Convert.ToInt32(Console.ReadLine());
                 lst.RemoveAt(pos);
+                FileOperations.Write(lst);
             }
             catch
             {
@@ -70,6 +71,8 @@ namespace Day5_Objects
             Console.WriteLine("Ievadiet elementu!");
             lst.Add(Console.ReadLine());
             Console.WriteLine();
+            FileOperations.Write(lst);
+
         }
 
         private static void PrintLst(List<string> lst)

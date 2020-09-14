@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Day5
 {
@@ -36,7 +37,7 @@ namespace Day5
                }*/
 
             // task 2 starts here
-            List<String> lst = new List<String>();
+            List<String> lst = FileOperations.Read2();
             string choice = "";
             while (choice != "exit")
             {
@@ -63,6 +64,7 @@ namespace Day5
                     }
                 }
                 else if (choice == "exit") { break; }
+               
                 else { Console.WriteLine("nepareiza ievade"); }
 
             }
