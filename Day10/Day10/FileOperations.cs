@@ -32,23 +32,31 @@ namespace Day10
        
         public static List<int> Read()
         {
+            int linecounter = 0;
             List<int> lst = new List<int>();
             try
             {
                 StreamReader sr = new StreamReader("Test.txt");
-
+                
                 string line = sr.ReadLine();
                 while (line != null)
                 {
-                    lst.Add(Convert.ToInt32(line));
+
+                    try { lst.Add(Convert.ToInt32(line)); }
+                    catch { Console.WriteLine("Tika izdzēsta rindiņa Nr. " + linecounter+1); }
+                    linecounter++;
                     line = sr.ReadLine();
+                    
                 }
                 sr.Close();
 
             }
             catch
             {
-                Console.WriteLine("Error Read file");
+                
+                Console.WriteLine("Nevar nolasīt failu ");
+              
+                
             }
             return lst;
         }

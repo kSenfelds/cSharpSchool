@@ -36,6 +36,7 @@ namespace Day10
                         DeleteElement(lst);
                         break;
                     case "0":
+                        FileOperations.Write(lst);
                         break;
                     case "3":
                         Console.WriteLine();
@@ -98,7 +99,7 @@ namespace Day10
             }
 
         }
-        private static int sumElements (List <int> lst)
+        private static double sumElements (List <int> lst)
         {
             int sumOfElements = 0;
             for (int i = 0; i<lst.Count; i++)
@@ -107,9 +108,9 @@ namespace Day10
             }
             return sumOfElements;
         }
-        private static int averageSum (List<int> lst)
+        private static double averageSum (List<int> lst)
         { 
-            int average = (sumElements(lst)/ lst.Count);
+            double average = (sumElements(lst)/ lst.Count);
             return average;
         }
         
