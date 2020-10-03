@@ -7,7 +7,7 @@ namespace TicTacToe
         static void Main(string[] args)
         {
              Board.printBoard();
-            
+            Board.startGame();
         }
     }
 }
