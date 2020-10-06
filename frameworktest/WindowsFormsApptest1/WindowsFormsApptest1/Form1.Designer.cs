@@ -43,6 +43,8 @@
             this.XwinLabel = new System.Windows.Forms.Label();
             this.OwinLabel = new System.Windows.Forms.Label();
             this.DrawLabel = new System.Windows.Forms.Label();
+            this.SaveFile = new System.Windows.Forms.Button();
+            this.History = new System.Windows.Forms.Button();
             this.gameBoard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,11 +201,33 @@
             this.DrawLabel.TabIndex = 5;
             this.DrawLabel.Text = "Draws = ";
             // 
+            // SaveFile
+            // 
+            this.SaveFile.Location = new System.Drawing.Point(563, 314);
+            this.SaveFile.Name = "SaveFile";
+            this.SaveFile.Size = new System.Drawing.Size(125, 29);
+            this.SaveFile.TabIndex = 6;
+            this.SaveFile.Text = "Save to file";
+            this.SaveFile.UseVisualStyleBackColor = true;
+            this.SaveFile.Click += new System.EventHandler(this.SaveFile_Click);
+            // 
+            // History
+            // 
+            this.History.Location = new System.Drawing.Point(563, 349);
+            this.History.Name = "History";
+            this.History.Size = new System.Drawing.Size(125, 31);
+            this.History.TabIndex = 7;
+            this.History.Text = "Show history";
+            this.History.UseVisualStyleBackColor = true;
+            this.History.Click += new System.EventHandler(this.History_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.History);
+            this.Controls.Add(this.SaveFile);
             this.Controls.Add(this.DrawLabel);
             this.Controls.Add(this.OwinLabel);
             this.Controls.Add(this.XwinLabel);
@@ -235,6 +259,8 @@
         private System.Windows.Forms.Label XwinLabel;
         private System.Windows.Forms.Label OwinLabel;
         private System.Windows.Forms.Label DrawLabel;
+        private System.Windows.Forms.Button SaveFile;
+        private System.Windows.Forms.Button History;
     }
 }
 

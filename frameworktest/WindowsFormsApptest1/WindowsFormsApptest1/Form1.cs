@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,325 +17,305 @@ namespace WindowsFormsApptest1
         {
             InitializeComponent();
         }
-        private static List<int> player1Moves = new List<int> ();
-        private static List<int> player2Moves = new List<int>();
-        private static List<int> cpuMoves = new List<int>();
-        string player = "player1";
-
+        public static List<string> winList = new List<string> ();
+        
+        String symbol = "X";
+        int xWinCounter = 0;
+        int oWinCounter = 0;
+        int drawCounter = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
 
         private void startGameButton_Click(object sender, EventArgs e)
-        {
+        {   
+
            foreach (Control c in gameBoard.Controls)
             {
                 if (c is Button)
                 {
                     c.Text = "";
                     c.Enabled = true;
-
+                    c.BackColor = Color.LightGray;
                 }
             }
+
             ProgressLabel.Text = "Game in process!";
-            player1Moves.Clear();
-            cpuMoves.Clear();
+          
         }
 
 
             private void btn1_1_Click(object sender, EventArgs e)
         {   
-            if (player == "player1")
+            if (symbol == "X")
             {
-                move(player, btn1_1, 1);
-                checkWinner(player1Moves, cpuMoves);
-                player = "cpu";
+                move(symbol, btn1_1);
+                symbol = "O";
+                
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                move(player, btn1_1, 1);
-                checkWinner(player1Moves, cpuMoves);
-                player = "player1";
+                move(symbol, btn1_1);
+                symbol = "X";
             }
            
         }
         private void btn1_2_Click(object sender, EventArgs e)
         {
-            if (player == "player1")
+            if (symbol == "X")
             {
-                move(player, btn1_2, 2);
-                checkWinner(player1Moves, cpuMoves);
-                player = "cpu";
+                move(symbol, btn1_2);
+                symbol = "O";
+
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                move(player, btn1_2, 2);
-                checkWinner(player1Moves, cpuMoves);
-                player = "player1";
+                move(symbol, btn1_2);
+                symbol = "X";
             }
+
         }
         private void btn1_3_Click(object sender, EventArgs e)
         {
-            if (player == "player1")
+            if (symbol == "X")
             {
-                move(player, btn1_3, 3);
-                checkWinner(player1Moves, cpuMoves);
-                player = "cpu";
+                move(symbol, btn1_3);
+                symbol = "O";
+
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                move(player, btn1_3, 3);
-                checkWinner(player1Moves, cpuMoves);
-                player = "player1";
+                move(symbol, btn1_3);
+                symbol = "X";
             }
+
         }
         private void btn2_1_Click(object sender, EventArgs e)
         {
-            if (player == "player1")
+            if (symbol == "X")
             {
-                move(player, btn2_1, 4);
-                checkWinner(player1Moves, cpuMoves);
-                player = "cpu";
+                move(symbol, btn2_1);
+                symbol = "O";
+
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                move(player, btn2_1, 4);
-                checkWinner(player1Moves, cpuMoves);
-                player = "player1";
+                move(symbol, btn2_1);
+                symbol = "X";
             }
+
         }
         private void btn2_2_Click(object sender, EventArgs e)
         {
-            if (player == "player1")
+            if (symbol == "X")
             {
-                move(player, btn2_2, 5);
-                checkWinner(player1Moves, cpuMoves);
-                player = "cpu";
+                move(symbol, btn2_2);
+                symbol = "O";
+
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                move(player, btn2_2, 5);
-                checkWinner(player1Moves, cpuMoves);
-                player = "player1";
+                move(symbol, btn2_2);
+                symbol = "X";
             }
+
         }
         private void btn2_3_Click(object sender, EventArgs e)
         {
-            if (player == "player1")
+            if (symbol == "X")
             {
-                move(player, btn2_3, 6);
-                checkWinner(player1Moves, cpuMoves);
-                player = "cpu";
+                move(symbol, btn2_3);
+                symbol = "O";
+
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                move(player, btn2_3, 6);
-                checkWinner(player1Moves, cpuMoves);
-                player = "player1";
+                move(symbol, btn2_3);
+                symbol = "X";
             }
+
         }
         private void btn3_1_Click(object sender, EventArgs e)
         {
-            if (player == "player1")
+            if (symbol == "X")
             {
-                move(player, btn3_1, 7);
-                checkWinner(player1Moves, cpuMoves);
-                player = "cpu";
+                move(symbol, btn3_1);
+                symbol = "O";
+
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                move(player, btn3_1, 7);
-                checkWinner(player1Moves, cpuMoves);
-                player = "player1";
+                move(symbol, btn3_1);
+                symbol = "X";
             }
+
         }
         private void btn3_2_Click(object sender, EventArgs e)
         {
-            if (player == "player1")
+            if (symbol == "X")
             {
-                move(player, btn3_2, 8);
-                checkWinner(player1Moves, cpuMoves);
-                player = "cpu";
+                move(symbol, btn3_2);
+                symbol = "O";
+
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                move(player, btn3_2, 8);
-                checkWinner(player1Moves, cpuMoves);
-                player = "player1";
+                move(symbol, btn3_2);
+                symbol = "X";
             }
+
         }
         private void btn3_3_Click(object sender, EventArgs e)
         {
-            if (player == "player1")
+            if (symbol == "X")
             {
-                move(player, btn3_3, 9);
-                checkWinner(player1Moves, cpuMoves);
-                player = "cpu";
+                move(symbol, btn3_3);
+                symbol = "O";
+
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                move(player, btn3_3, 9);
-                checkWinner(player1Moves, cpuMoves);
-                player = "player1";
-            }
-        }
-        private void move (string player, Button buttonName, int movePosition)
-        { String symbol = "X";
-            if (player == "player1")
-            {
+                move(symbol, btn3_3);
                 symbol = "X";
+            }
+
+        }
+        private void move (string symbol, Button buttonName)
+        {
+            
+            if (symbol == "X")
+            {
+               
                 buttonName.Text = symbol;
                 buttonName.Enabled = false;
-                switch (movePosition)
+
+                if (checkWinner() == true)
                 {
-                    case 1: player1Moves.Add(1);
-                        break;
-                    case 2:
-                        player1Moves.Add(2);
-                        break;
-                    case 3:
-                        player1Moves.Add(3);
-                        break;
-                    case 4:
-                        player1Moves.Add(4);
-                        break;
-                    case 5:
-                        player1Moves.Add(5);
-                        break;
-                    case 6:
-                        player1Moves.Add(6);
-                        break;
-                    case 7:
-                        player1Moves.Add(7);
-                        break;
-                    case 8:
-                        player1Moves.Add(8);
-                        break;
-                    case 9:
-                        player1Moves.Add(9);
-                        break;
+                    xWinCounter++;
+                    winList.Add(Convert.ToString(DateTime.Now) + "   X wins");
+                    XwinLabel.Text = "X wins = " + xWinCounter;
+                    ProgressLabel.Text = "X wins! :)";
+                    foreach (Control c in gameBoard.Controls)
+                    {
+                        if (c is Button)
+                        {
+                            c.Text = "";
+                            c.Enabled = false;
+
+                        }
+                    }
+                    
                 }
-                symbol = "O";
-                
                
             }
-            else if (player == "cpu")
+            else if (symbol == "O")
             {
-                symbol = "O";
+                
                 buttonName.Text = symbol;
                 buttonName.Enabled = false;
-                switch (movePosition)
+
+                if (checkWinner() == true)
                 {
-                    case 1:
-                        cpuMoves.Add(1);
-                        break;
-                    case 2:
-                        cpuMoves.Add(2);
-                        break;
-                    case 3:
-                        cpuMoves.Add(3);
-                        break;
-                    case 4:
-                        cpuMoves.Add(4);
-                        break;
-                    case 5:
-                        cpuMoves.Add(5);
-                        break;
-                    case 6:
-                        cpuMoves.Add(6);
-                        break;
-                    case 7:
-                        cpuMoves.Add(7);
-                        break;
-                    case 8:
-                        cpuMoves.Add(8);
-                        break;
-                    case 9:
-                        cpuMoves.Add(9);
-                        break;
+                    oWinCounter++;
+                    winList.Add(Convert.ToString(DateTime.Now) + "   O wins");
+                    OwinLabel.Text = "O wins = " + oWinCounter;
+                    ProgressLabel.Text = "O wins! :)";
+                    foreach (Control c in gameBoard.Controls)
+                    {
+                        if (c is Button)
+                        {
+                            c.Text = "";
+                            c.Enabled = false;
+
+                        }
+                    }
+                    
                 }
-                symbol = "X";
+
+            }
+            if ((!btn1_1.Enabled) && (!btn1_2.Enabled) && (!btn1_3.Enabled) && (!btn2_1.Enabled) && (!btn2_2.Enabled) && (!btn2_3.Enabled) && (!btn3_1.Enabled) && (!btn3_2.Enabled) && (btn3_3.Enabled))
+            {
+                drawCounter++;
+                ProgressLabel.Text = "DRAW ! ";
+                DrawLabel.Text = "Draws =" + drawCounter;
             }
         }
-        private void checkWinner (List<int> player1Moves, List<int> cpuMoves)
+        private bool checkWinner ()
         { 
-            if (player1Moves.Contains(1) && player1Moves.Contains(2) && player1Moves.Contains(3) && btn1_1.Text == "X")
+            if ((btn1_1.Text == btn1_2.Text)&&(btn1_2.Text==btn1_3.Text)&& (!btn1_1.Enabled))
             {
-                ProgressLabel.Text = "Player X wins";
+                btn1_1.BackColor = Color.Green;
+                btn1_2.BackColor = Color.Green;
+                btn1_3.BackColor = Color.Green;
+                return true;
             }
-            else if (player1Moves.Contains(4) && player1Moves.Contains(5) && player1Moves.Contains(6) && btn2_1.Text == "X")
+            else if ((btn2_1.Text == btn2_2.Text) && (btn2_2.Text == btn2_3.Text) && (!btn2_1.Enabled))
             {
-                ProgressLabel.Text = "Player X wins";
+                btn2_1.BackColor = Color.Green;
+                btn2_2.BackColor = Color.Green;
+                btn2_3.BackColor = Color.Green;
+                return true;
             }
-            else if (player1Moves.Contains(7) && player1Moves.Contains(8) && player1Moves.Contains(9) && btn3_1.Text == "X")
+            else if ((btn3_1.Text == btn3_2.Text) && (btn3_2.Text == btn3_3.Text) && (!btn3_1.Enabled))
             {
-                ProgressLabel.Text = "Player X wins";
+                btn3_1.BackColor = Color.Green;
+                btn3_2.BackColor = Color.Green;
+                btn3_3.BackColor = Color.Green;
+                return true;
             }
-            else if (player1Moves.Contains(1) && player1Moves.Contains(4) && player1Moves.Contains(7) && btn1_1.Text == "X")
+            else if ((btn1_1.Text == btn2_1.Text) && (btn2_1.Text == btn3_1.Text) && (!btn1_1.Enabled))
             {
-                ProgressLabel.Text = "Player X wins";
+                btn1_1.BackColor = Color.Green;
+                btn2_1.BackColor = Color.Green;
+                btn3_1.BackColor = Color.Green;
+                return true;
             }
-            else if (player1Moves.Contains(2) && player1Moves.Contains(5) && player1Moves.Contains(8) && btn1_2.Text == "X")
+            else if ((btn1_2.Text == btn2_2.Text) && (btn2_2.Text == btn3_2.Text) && (!btn1_2.Enabled))
             {
-                ProgressLabel.Text = "Player X wins";
+                btn1_2.BackColor = Color.Green;
+                btn2_2.BackColor = Color.Green;
+                btn3_2.BackColor = Color.Green;
+                return true;
             }
-            else if (player1Moves.Contains(3) && player1Moves.Contains(6) && player1Moves.Contains(9) && btn1_3.Text == "X")
+            else if ((btn1_3.Text == btn2_3.Text) && (btn2_3.Text == btn3_3.Text) && (!btn1_3.Enabled))
             {
-                ProgressLabel.Text = "Player X wins";
+                btn1_3.BackColor = Color.Green;
+                btn2_3.BackColor = Color.Green;
+                btn3_3.BackColor = Color.Green;
+                return true;
             }
-            else if (player1Moves.Contains(1) && player1Moves.Contains(5) && player1Moves.Contains(9) && btn1_1.Text == "X")
+            else if ((btn1_1.Text == btn2_2.Text) && (btn2_2.Text == btn3_3.Text) && (!btn1_1.Enabled))
             {
-                ProgressLabel.Text = "Player X wins";
+                btn1_1.BackColor = Color.Green;
+                btn2_2.BackColor = Color.Green;
+                btn3_3.BackColor = Color.Green;
+                return true;
             }
-            else if (player1Moves.Contains(3) && player1Moves.Contains(5) && player1Moves.Contains(7) && btn1_3.Text == "X")
+            else if ((btn1_3.Text == btn2_2.Text) && (btn2_2.Text == btn3_1.Text) && (!btn1_3.Enabled))
             {
-                ProgressLabel.Text = "Player X wins";
+                btn1_3.BackColor = Color.Green;
+                btn2_2.BackColor = Color.Green;
+                btn3_1.BackColor = Color.Green;
+                return true;
             }
-            else if (cpuMoves.Contains(1) && player1Moves.Contains(2) && player1Moves.Contains(3) && btn1_1.Text == "O")
-            {
-                ProgressLabel.Text = "Player O wins";
-            }
-            else if (cpuMoves.Contains(4) && player1Moves.Contains(5) && player1Moves.Contains(6) && btn2_1.Text == "O")
-            {
-                ProgressLabel.Text = "Player O wins";
-            }
-            else if (cpuMoves.Contains(7) && player1Moves.Contains(8) && player1Moves.Contains(9) && btn3_1.Text == "O")
-            {
-                ProgressLabel.Text = "Player O wins";
-            }
-            else if (cpuMoves.Contains(1) && player1Moves.Contains(4) && player1Moves.Contains(7) && btn1_1.Text == "O")
-            {
-                ProgressLabel.Text = "Player O wins";
-            }
-            else if (cpuMoves.Contains(2) && player1Moves.Contains(5) && player1Moves.Contains(8) && btn1_2.Text == "O")
-            {
-                ProgressLabel.Text = "Player O wins";
-            }
-            else if (cpuMoves.Contains(3) && player1Moves.Contains(6) && player1Moves.Contains(9) && btn1_3.Text == "O")
-            {
-                ProgressLabel.Text = "Player O wins";
-            }
-            else if (cpuMoves.Contains(1) && player1Moves.Contains(5) && player1Moves.Contains(9) && btn1_1.Text == "O")
-            {
-                ProgressLabel.Text = "Player O wins";
-            }
-            else if (cpuMoves.Contains(3) && player1Moves.Contains(5) && player1Moves.Contains(7) && btn1_3.Text == "O")
-            {
-                ProgressLabel.Text = "Player O wins";
-            }
-            else if (player1Moves.Count+cpuMoves.Count == 9)
-            {
-                ProgressLabel.Text = "TIE";
-            }
+
             else
             {
-                ProgressLabel.Text = "Game in process!";
+                return false;
             }
-
         }
-        
 
-        
+        private void SaveFile_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+        }
+
+        private void History_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
+        }
     }
 }
